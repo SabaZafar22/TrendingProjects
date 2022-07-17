@@ -1,22 +1,24 @@
 package com.example.trendingprojects.repositories.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.trendingprojects.R
-import com.example.trendingprojects.databinding.FragmentTrendingProejctsBinding
+import androidx.fragment.app.Fragment
+import com.example.trendingprojects.databinding.FragmentTrendingProjectsListBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+
+@AndroidEntryPoint
 class TrendingProjectsFragment : Fragment() {
 
-    lateinit var binding: FragmentTrendingProejctsBinding
+    lateinit var binding: FragmentTrendingProjectsListBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentTrendingProejctsBinding.inflate(inflater, container, false)
+        binding = FragmentTrendingProjectsListBinding.inflate(inflater, container, false)
         return binding.root
     }
 }
