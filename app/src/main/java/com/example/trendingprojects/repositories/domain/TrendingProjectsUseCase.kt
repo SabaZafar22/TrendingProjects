@@ -5,6 +5,6 @@ import javax.inject.Inject
 interface TrendingProjectsUseCase {
 }
 
-class DefaultTrendingProjects @Inject constructor() : TrendingProjectsUseCase {
+class DefaultTrendingProjectsUseCase @Inject constructor() : TrendingProjectsUseCase {
 
 }
