@@ -12,13 +12,5 @@
         android:layout_height="match_parent"
         tools:context=".repositories.ui.TrendingProjectsFragment">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="@dimen/unit_0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintTop_toTopOf="parent"/>
-        
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
