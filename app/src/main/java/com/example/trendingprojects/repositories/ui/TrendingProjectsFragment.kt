@@ -8,11 +8,10 @@ import androidx.fragment.app.Fragment
 import com.example.trendingprojects.databinding.FragmentTrendingProjectsListBinding
 import dagger.hilt.android.AndroidEntryPoint
 
-
 @AndroidEntryPoint
 class TrendingProjectsFragment : Fragment() {
 
-    lateinit var binding: FragmentTrendingProjectsListBinding
+    private lateinit var binding: FragmentTrendingProjectsListBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
