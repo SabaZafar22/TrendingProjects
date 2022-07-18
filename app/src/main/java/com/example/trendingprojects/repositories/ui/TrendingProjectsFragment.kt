@@ -38,4 +38,8 @@ class TrendingProjectsFragment : Fragment() {
             adapter = TrendingProjectsAdapter()
         }
     }
+
+    fun refresh() {
+        trendingProjectsViewModel.getProjects(true)
+    }
 }

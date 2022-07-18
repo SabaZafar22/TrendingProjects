@@ -30,13 +30,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:set_project_list="@{viewModel.projectsUiState}"
+            app:visible="@{viewModel.projectsUiState instanceof TrendingProjectUiState.Success}"
             tools:listitem="@layout/item_trending_projects" />
 
         <ImageView
             android:id="@+id/retryImage"
             android:layout_width="@dimen/unit_0dp"
-            android:layout_height="600dp"
-            android:onClick="@{()->viewModel.getProjects()}"
+            android:layout_height="400dp"
             android:src="@drawable/ic_network_busy"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -50,9 +50,10 @@
             android:layout_width="@dimen/unit_0dp"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="?android:textColorPrimary"
             android:textSize="@dimen/text_size_medium"
             android:textStyle="bold"
+            app:set_text="@{viewModel.projectsUiState}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/retryImage"
@@ -62,7 +63,7 @@
 
         <TextView
             android:id="@+id/tvDummyMessage"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/unit_0dp"
             android:layout_height="wrap_content"
             android:text="@string/dummy_text"
             android:textAlignment="center"
@@ -82,6 +83,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            android:onClick="@{()->viewModel.getProjects(true)}"
             app:visible="@{viewModel.projectsUiState instanceof TrendingProjectUiState.Failure}"
             tools:visibility="gone" />
 

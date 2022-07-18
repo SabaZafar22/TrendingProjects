@@ -14,17 +14,29 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/unit_2x">
 
+        <ImageView
+            android:id="@+id/userImage"
+            android:layout_width="@dimen/unit_8x"
+            android:layout_height="@dimen/unit_8x"
+            app:image_url="@{model.image}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/name"
+            app:layout_constraintBottom_toBottomOf="@id/star"
+            tools:src="@drawable/round_background"
+            tools:ignore="ContentDescription" />
+
         <TextView
             android:id="@+id/name"
             app:visible="@{!model.name.empty}"
             android:layout_width="@dimen/unit_0dp"
             android:layout_height="wrap_content"
             android:text="@{model.name}"
-            android:textColor="@color/black"
+            android:textColor="?android:textColorPrimary"
             android:textSize="@dimen/text_size_medium"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/userImage"
             app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="@dimen/unit_1x"
             tools:text="Saba" />
 
         <TextView
@@ -34,12 +46,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/unit_1x"
             android:text="@{model.fullName}"
-            android:textColor="@color/black"
+            android:textColor="?android:textColorPrimary"
             android:textSize="@dimen/text_size_medium"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/userImage"
             app:layout_constraintTop_toBottomOf="@id/name"
+            android:layout_marginStart="@dimen/unit_1x"
             tools:text="Saba Zafar" />
 
         <TextView
@@ -50,9 +63,11 @@
             android:layout_marginTop="@dimen/unit_1x"
             android:text="@{model.description}"
             android:textSize="@dimen/text_size_normal"
+            android:maxLines="3"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/userImage"
             app:layout_constraintTop_toBottomOf="@id/fullName"
+            android:layout_marginStart="@dimen/unit_1x"
             tools:text="Description" />
 
         <View
@@ -63,8 +78,9 @@
             android:layout_marginTop="@dimen/unit_2x"
             android:background="@drawable/round_background"
             android:backgroundTint="#165890"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/description" />
+            app:layout_constraintStart_toEndOf="@id/userImage"
+            app:layout_constraintTop_toBottomOf="@id/description"
+            android:layout_marginStart="@dimen/unit_1x"/>
 
         <TextView
             android:id="@+id/language"
@@ -73,7 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/unit_1x"
             android:text="@{model.language}"
-            android:textColor="@color/black"
+            android:textColor="?android:textColorPrimary"
             android:textSize="@dimen/text_size_medium"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/circle"
@@ -86,11 +102,13 @@
             app:visible="@{model.starsCount > 0}"
             android:layout_width="@dimen/unit_20dp"
             android:layout_height="@dimen/unit_20dp"
-            android:layout_marginStart="@dimen/unit_3x"
             android:src="@drawable/ic_star"
             app:layout_constraintBottom_toBottomOf="@id/language"
             app:layout_constraintStart_toEndOf="@id/language"
             app:layout_constraintTop_toTopOf="@id/language"
+            app:layout_goneMarginTop="@dimen/unit_2x"
+            android:layout_marginStart="@dimen/unit_3x"
+            app:layout_goneMarginStart="@dimen/unit_0dp"
             tools:ignore="ContentDescription" />
 
         <TextView
@@ -100,7 +118,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/unit_1x"
             android:text="@{model.count}"
-            android:textColor="@color/black"
+            android:textColor="?android:textColorPrimary"
             android:textSize="@dimen/text_size_medium"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/star"

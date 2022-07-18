@@ -8,8 +8,12 @@ import com.example.trendingprojects.repositories.domain.DefaultTrendingProjectsU
 import com.example.trendingprojects.repositories.domain.TrendingProjectsUseCase
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
+import dagger.hilt.components.SingletonComponent
+import kotlinx.coroutines.Dispatchers
+import kotlin.coroutines.CoroutineContext
 
 @Module
 @InstallIn(ViewModelComponent::class)
@@ -22,4 +26,11 @@ abstract class Bindings {
 
     @Binds
     abstract fun bindRepo(default: DefaultTrendingProjectsRepository): TrendingProjectsRepository
+}
+
+@Module
+@InstallIn(SingletonComponent::class)
+object AppModule {
+    @Provides
+    fun provideContext(): CoroutineContext = Dispatchers.IO
 }

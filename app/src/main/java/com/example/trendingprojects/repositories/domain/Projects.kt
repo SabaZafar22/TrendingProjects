@@ -15,7 +15,7 @@ data class Projects(
     @Json(name = "full_name")
     val fullName: String,
     val description: String,
-    val language: String,
+    val language: String?,
     @Json(name = "stargazers_count")
     val starsCount: Double,
     @Embedded

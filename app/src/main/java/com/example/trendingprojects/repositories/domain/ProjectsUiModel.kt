@@ -5,7 +5,7 @@ data class ProjectsUiModel(
     val fullName: String,
     val description: String,
     val language: String,
-    val starsCount: Int,
+    val starsCount: Double,
     val image: String
 ){
     val count = starsCount.toString()

@@ -1,6 +1,7 @@
 package com.example.trendingprojects.repositories.domain
 
 import com.example.trendingprojects.repositories.data.TrendingProjectsRepository
+import com.nhaarman.mockitokotlin2.whenever
 import junit.framework.TestCase
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.collectLatest
@@ -27,6 +28,11 @@ class DefaultTrendingProjectsUseCaseTest : TestCase() {
     @Test
     fun `Given Failure Response When getProjects is called Then Failure State must be return`() =
         runBlocking {
+            whenever(repository.getProjects()).thenReturn(
+                TrendingProjectsState.Failure(
+                    "Empty"
+                )
+            )
             val states = ArrayList<TrendingProjectUiState>()
 
             useCase.getTrendingProjects(false).collectLatest {
@@ -42,7 +48,11 @@ class DefaultTrendingProjectsUseCaseTest : TestCase() {
     @Test
     fun `Given Success Response When getProjects is called Then Success ui State must be return`() =
         runBlocking {
-
+            whenever(repository.getProjects()).thenReturn(
+                TrendingProjectsState.Success(
+                    emptyList()
+                )
+            )
             val states = ArrayList<TrendingProjectUiState>()
 
             useCase.getTrendingProjects(false).collectLatest {

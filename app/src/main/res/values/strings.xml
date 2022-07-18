@@ -4,4 +4,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="dummy_text">An alien is trying to blocking your signal</string>
     <string name="retry_text">Retry</string>
+    <string name="refresh">Refresh</string>
+    <string name="mode_change">Dark/Night Mode</string>
 </resources>

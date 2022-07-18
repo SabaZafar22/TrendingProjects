@@ -14,7 +14,7 @@ suspend fun <T> callApi(apiCall: suspend () -> T): ResponseResult<T> {
             val result = apiCall.invoke()
             ResponseResult.Success(result)
         } catch (throwable: Throwable) {
-            ResponseResult.Failure("Test")
+            ResponseResult.Failure(throwable.localizedMessage ?: "Something Went Wrong")
         }
     }
 }
