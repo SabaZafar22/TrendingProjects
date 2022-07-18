@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="model"
+            type="com.example.trendingprojects.repositories.domain.ProjectsUiModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/unit_2x">
+
+        <TextView
+            android:id="@+id/name"
+            app:visible="@{!model.name.empty}"
+            android:layout_width="@dimen/unit_0dp"
+            android:layout_height="wrap_content"
+            android:text="@{model.name}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Saba" />
+
+        <TextView
+            android:id="@+id/fullName"
+            app:visible="@{!model.fullName.empty}"
+            android:layout_width="@dimen/unit_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/unit_1x"
+            android:text="@{model.fullName}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            tools:text="Saba Zafar" />
+
+        <TextView
+            android:id="@+id/description"
+            app:visible="@{!model.description.empty}"
+            android:layout_width="@dimen/unit_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/unit_1x"
+            android:text="@{model.description}"
+            android:textSize="@dimen/text_size_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fullName"
+            tools:text="Description" />
+
+        <View
+            android:id="@+id/circle"
+            app:visible="@{!model.language.empty}"
+            android:layout_width="@dimen/unit_10dp"
+            android:layout_height="@dimen/unit_10dp"
+            android:layout_marginTop="@dimen/unit_2x"
+            android:background="@drawable/round_background"
+            android:backgroundTint="#165890"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description" />
+
+        <TextView
+            android:id="@+id/language"
+            app:visible="@{!model.language.empty}"
+            android:layout_width="@dimen/unit_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/unit_1x"
+            android:text="@{model.language}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/circle"
+            app:layout_constraintStart_toEndOf="@id/circle"
+            app:layout_constraintTop_toTopOf="@id/circle"
+            tools:text="Kotlin" />
+
+        <ImageView
+            android:id="@+id/star"
+            app:visible="@{model.starsCount > 0}"
+            android:layout_width="@dimen/unit_20dp"
+            android:layout_height="@dimen/unit_20dp"
+            android:layout_marginStart="@dimen/unit_3x"
+            android:src="@drawable/ic_star"
+            app:layout_constraintBottom_toBottomOf="@id/language"
+            app:layout_constraintStart_toEndOf="@id/language"
+            app:layout_constraintTop_toTopOf="@id/language"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/count"
+            app:visible="@{model.starsCount > 0}"
+            android:layout_width="@dimen/unit_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/unit_1x"
+            android:text="@{model.count}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/star"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/star"
+            app:layout_constraintTop_toTopOf="@id/star"
+            tools:text="Kotlin" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="@dimen/unit_0dp"
+            android:layout_height="@dimen/unit_2dp"
+            android:layout_marginTop="@dimen/unit_20dp"
+            android:background="#dadedf"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/star" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

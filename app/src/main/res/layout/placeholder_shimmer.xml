@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/unit_2x"
+    android:orientation="horizontal">
+
+    <View
+        android:id="@+id/profileImage"
+        android:layout_width="@dimen/unit_40dp"
+        android:layout_height="@dimen/unit_40dp"
+        android:layout_margin="@dimen/unit_1x"
+        android:background="@drawable/round_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/userName"
+        android:layout_width="@dimen/unit_16x"
+        android:layout_height="@dimen/unit_20dp"
+        android:background="#dadedf"
+        android:layout_marginStart="@dimen/unit_2x"
+        app:layout_constraintStart_toEndOf="@id/profileImage"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/userDescription"
+        android:layout_width="@dimen/unit_0dp"
+        android:layout_height="@dimen/unit_20dp"
+        android:layout_marginTop="@dimen/unit_10dp"
+        android:background="#dadedf"
+        app:layout_constraintStart_toEndOf="@id/profileImage"
+        android:layout_marginStart="@dimen/unit_2x"
+        app:layout_constraintTop_toBottomOf="@id/userName" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="@dimen/unit_0dp"
+        android:layout_height="@dimen/unit_2dp"
+        android:layout_marginTop="@dimen/unit_20dp"
+        android:background="#dadedf"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userDescription" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

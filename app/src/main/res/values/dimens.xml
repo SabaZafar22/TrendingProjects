@@ -18,6 +18,7 @@
     <dimen name="unit_13x">104dp</dimen>
     <dimen name="unit_14x">112dp</dimen>
     <dimen name="unit_15x">120dp</dimen>
+    <dimen name="unit_16x">128dp</dimen>
 
     <!--Image Rotation Unit-->
     <dimen name="rotate_180">180</dimen>
@@ -29,8 +30,11 @@
     <dimen name="unit_3dp">3dp</dimen>
     <dimen name="unit_4dp">4dp</dimen>
     <dimen name="unit_5dp">5dp</dimen>
+    <dimen name="unit_10dp">10dp</dimen>
     <dimen name="unit_11dp">11dp</dimen>
     <dimen name="unit_12dp">12dp</dimen>
+    <dimen name="unit_20dp">20dp</dimen>
+    <dimen name="unit_40dp">40dp</dimen>
 
     <dimen name="text_size_xsmall">10sp</dimen>
     <dimen name="text_size_small">12sp</dimen>
