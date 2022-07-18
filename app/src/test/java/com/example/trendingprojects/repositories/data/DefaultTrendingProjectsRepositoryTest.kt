@@ -38,13 +38,13 @@ class DefaultTrendingProjectsRepositoryTest : TestCase() {
     }
 
     @Test
-    fun `Given List from db When getProjects is called Then Succes State must be return`() =
+    fun `Given List from db When getProjects is called Then Success State must be return`() =
         runBlocking {
             whenever(projectsDao.getProjects()).thenReturn(
                 getListOfProjects()
             )
 
-            val result = trendingProjectsRepository.getProjects()
+            val result = trendingProjectsRepository.getProjects(false)
 
             assert(result is TrendingProjectsState.Success)
             assert(
@@ -68,7 +68,7 @@ class DefaultTrendingProjectsRepositoryTest : TestCase() {
                 )
             ).thenReturn(Unit)
 
-            val result = trendingProjectsRepository.getProjects()
+            val result = trendingProjectsRepository.getProjects(false)
 
             assert(result is TrendingProjectsState.Success)
             assert(
@@ -104,7 +104,7 @@ class DefaultTrendingProjectsRepositoryTest : TestCase() {
                 getFailureResponse()
             )
 
-            val result = trendingProjectsRepository.getProjects()
+            val result = trendingProjectsRepository.getProjects(false)
 
             assert(result is TrendingProjectsState.Failure)
             assert(

@@ -13,6 +13,7 @@
         android:theme="@style/Theme.TrendingProjects">
         <activity
             android:name=".repositories.TrendingProjectsActivity"
+            android:label="Trending"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

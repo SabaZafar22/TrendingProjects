@@ -28,7 +28,7 @@ class DefaultTrendingProjectsUseCaseTest : TestCase() {
     @Test
     fun `Given Failure Response When getProjects is called Then Failure State must be return`() =
         runBlocking {
-            whenever(repository.getProjects()).thenReturn(
+            whenever(repository.getProjects(false)).thenReturn(
                 TrendingProjectsState.Failure(
                     "Empty"
                 )
@@ -48,7 +48,7 @@ class DefaultTrendingProjectsUseCaseTest : TestCase() {
     @Test
     fun `Given Success Response When getProjects is called Then Success ui State must be return`() =
         runBlocking {
-            whenever(repository.getProjects()).thenReturn(
+            whenever(repository.getProjects(false)).thenReturn(
                 TrendingProjectsState.Success(
                     emptyList()
                 )
